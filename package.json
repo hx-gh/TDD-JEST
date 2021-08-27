@@ -1,0 +1,34 @@
+{
+  "name": "TDD-JEST",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "run-dev": "nodemon src/server.js --ignore __tests__",
+    "pretest": "set NODE_ENV=TEST && sequelize db:migrate",
+    "test": "set NODE_ENV=test && jest",
+    "posttest": "set NODE_ENV=test && sequelize db:migrate:undo:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "factory-girl": "^5.0.4",
+    "jest": "^27.0.6",
+    "sequelize-cli": "^6.2.0",
+    "sqlite3": "^5.0.2",
+    "supertest": "^6.1.6"
+  }
+}
